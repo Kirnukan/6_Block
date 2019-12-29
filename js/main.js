@@ -3,7 +3,7 @@ const miniDesktopWidth = 768;
 const desktopWidth = 1120;
 var swiperList = document.querySelector('.swiper-container').swiper;
 
-if(window.innerWidth >= miniDesktopWidth){
+
 var swiperList =  new Swiper('.swiper-container',{
     slidesPerView: 'auto',
     slidesOffsetBefore: 16,
@@ -15,4 +15,4 @@ var swiperList =  new Swiper('.swiper-container',{
       clickable: true
     }
   });
-} 
+
