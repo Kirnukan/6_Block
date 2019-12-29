@@ -17,7 +17,6 @@
     width: 100%;
     background-color: #F2F2F2;
     overflow: hidden;
-
 }
 .slider-section__header{
     
@@ -70,13 +69,32 @@
     transition: .5s;
 }
 .slider-section__btn{
+    font-family: inherit;
+    display: flex;
+    flex-wrap: nowrap;
     color: #1B1C21;
     background-color: transparent;
     display: none;
     border: none;
     margin-top: 16px;
-    width: 101px;
+    width: 151px;
     height: 24px;
+    margin-bottom: 16px;
+    margin-left: 16px;
+}
+.slider-section__btn::before{
+    content: "";
+    height: 10px;
+    width: 10px;
+    background-image: url(icons/next.svg);
+    background-repeat: no-repeat;
+    padding-right: 17px;
+
+    margin-top: 3px;
+}
+.slider-section__btn:hover::before{
+    transition: 1s;
+    filter: hue-rotate(180deg);
 }
 .swiper-pagination {
     /* show on small viewports */
