@@ -9,7 +9,7 @@ var swiperList =  new Swiper('.swiper-container',{
     slidesOffsetBefore: 16,
     slidesOffsetAfter: 16,
     spaceBetween: 16,
-    watchOverflow: true,
+    watchOverflow: false,
     pagination: {
       el: '.swiper-pagination',
       clickable: true
