@@ -1,0 +1,126 @@
+
+@font-face{
+    font-family: 'TTLakes';
+    src: url(fonts/TTLakes-Medium.ttf);
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+.slider-section{
+    border-top: 1px solid #D9FFF5;
+    font-family: 'TTLakes';
+    display: flex;
+    flex-direction: column;
+    min-height: 234px;
+    max-width: 768px;
+    width: 100%;
+    background-color: #F2F2F2;
+    
+}
+.slider-section__header{
+    
+    font-size: 16px;
+    color: #7E7E82;
+    padding: 16px;
+}
+.swiper{
+    
+    min-height: 154px;
+    height: 100%;
+    
+
+}
+.swiper__list{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.swiper__item{
+    display: flex;
+    min-width: 240px;
+    height: 72px;
+    background-color: white;
+    justify-content: space-between;
+
+}
+.swiper__logo{
+    display: flex;
+    padding: 20px;
+    padding-right: 0;
+    padding-left: 16px;
+    
+}
+.swiper__btn{
+    display: flex;
+    width: 40px;
+    height: 40px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    margin-right: 16px;
+    background-image: url(icons/go.svg);
+    background-repeat: no-repeat;
+}
+
+.swiper__btn:hover{
+    background-color: rgb(241, 217, 224);
+    filter: hue-rotate(45deg) saturate(5);
+    transition: .5s;
+}
+.slider-section__btn{
+    color: #1B1C21;
+    background-color: transparent;
+    display: none;
+    border: none;
+    margin-top: 16px;
+    width: 101px;
+    height: 24px;
+}
+.swiper-pagination {
+    /* show on small viewports */
+    display: block;
+}
+
+@media (min-width: 31.25em) {
+    .swiper-pagination {
+        /* swiper is disabled at this breakpoint */
+        display: none;
+    }
+}
+@media (min-width: 768px){
+    .slider-section{
+        max-width: 1120px;       
+        min-width: 100%;
+        max-height: 322px;
+        height: 322px;
+        overflow: visible;
+    }
+    .swiper__list{
+        height: 200px;
+    }
+    .swiper__list{
+        flex-wrap: wrap;
+    }
+    .swiper{
+        height: 200px;
+    }
+    .swiper__item{
+        box-sizing: border-box;
+        border: 1px solid #EAEAEA;
+        border-radius: 6px;
+        flex-grow: 1;
+        flex-shrink: 1;
+        min-width: 224px;
+        max-width: 100%;
+        width: 25%;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .swiper__item:nth-of-type(6)~.swiper__item{
+        display: none;
+    }
+    .slider-section__btn{
+        display: flex;
+    }
+}
