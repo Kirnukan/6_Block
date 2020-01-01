@@ -60,6 +60,7 @@
     margin-right: 16px;
     background-image: url(icons/go.svg);
     background-repeat: no-repeat;
+    border-radius: 50%;
 }
 
 .swiper__btn:hover{
@@ -87,12 +88,13 @@
     background-image: url(icons/next.svg);
     background-repeat: no-repeat;
     padding-right: 17px;
-
+    
     margin-top: 3px;
 }
 .slider-section__btn:hover::before{
     transition: 1s;
     filter: hue-rotate(180deg);
+
 }
 .swiper-pagination {
     position: absolute;
