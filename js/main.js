@@ -18,7 +18,7 @@ let swiperValues = {
 if(window.innerWidth < miniDesktopWidth){
  swiperList =  new Swiper('.swiper-container', swiperValues);
 }
-const swiperFunc = function(evt){
+const swiperFunc = function(){
   if (window.innerWidth >= miniDesktopWidth) {
     swiperList.destroy();
   } else {
@@ -28,7 +28,7 @@ const swiperFunc = function(evt){
   window.addEventListener('resize', swiperFunc);
 
 let swiperBtn = document.querySelector('.slider-section__btn');
-swiperBtn.addEventListener('click', function(evt){
+swiperBtn.addEventListener('click', function(){
   let slides = document.querySelectorAll('.swiper__item'); 
   let sliderSection = document.querySelector('.slider-section');
   if(!sliderSection.classList.contains('slider-section--active')){

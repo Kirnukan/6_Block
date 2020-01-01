@@ -43,6 +43,7 @@
     height: 72px;
     background-color: white;
     justify-content: space-between;
+    align-items: center;
 
 }
 .swiper__logo{
@@ -164,7 +165,6 @@
         min-width: 224px;
         max-width: 100%;
         width: 25%;
-        align-items: center;
         margin-right: 24px;
         margin-bottom: 16px;
         
