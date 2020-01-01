@@ -31,19 +31,29 @@ let swiperBtn = document.querySelector('.slider-section__btn');
 swiperBtn.addEventListener('click', function(evt){
   let slides = document.querySelectorAll('.swiper__item'); 
   let sliderSection = document.querySelector('.slider-section');
-  for(let i = 6; i <= slides.length; i++){
-    if(slides[i].style.display == 'none'){
-      slides[i].style.display = 'flex';
-    } else {
-      slides[i].style.display = 'none';
-    }
-    if(sliderSection.style.maxHeight == '322px' && sliderSection.style.height == '322px'){
-      sliderSection.style.maxHeight = '490px';
-      sliderSection.style.height = '490px';
-    } else {
-      sliderSection.style.maxHeight = '322px';
-      sliderSection.style.height = '322px';
-    }
+  if(!sliderSection.classList.contains('slider-section--active')){
+    sliderSection.classList.add('slider-section--active');
+    
+  } else {
+    sliderSection.classList.remove('slider-section--active');
+    
   }
-  
+  if(!swiperBtn.classList.contains('slider-section__btn--rotate')){
+    swiperBtn.classList.add('slider-section__btn--rotate');
+    
+  } else {
+    swiperBtn.classList.remove('slider-section__btn--rotate');
+    
+  }
+  for(let i = 6; i <= slides.length; ++i){
+    if(!slides[i].classList.contains('flex')){
+      slides[i].classList.add('flex');
+      slides[i].classList.remove('none');
+    } else {
+      slides[i].classList.remove('flex');
+      slides[i].classList.add('none');
+    }
+
+  }
+
 });
