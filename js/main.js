@@ -1,7 +1,9 @@
 const mobileWidth = 320;
 const miniDesktopWidth = 768;
 const desktopWidth = 1120;
+let slidesCount;
 //var swiperList = document.querySelector('.swiper-container').swiper;
+
 let swiperValues = {
   
     slidesPerView: 'auto',
@@ -24,10 +26,40 @@ const swiperFunc = function(){
   } else {
     swiperList = new Swiper('.swiper-container', swiperValues)
   }
+
 }
   window.addEventListener('resize', swiperFunc);
 
 let swiperBtn = document.querySelector('.slider-section__btn');
+let slides = document.querySelectorAll('.swiper__item'); 
+let desktopResize = function(){
+if (window.innerWidth >= desktopWidth) {
+  for(let i = 6; i <= slides.length-4; ++i){
+    if(!slides[i].classList.contains('flex')){
+      slides[i].classList.add('flex');
+      slides[i].classList.remove('none');
+    } else {
+      slides[i].classList.remove('flex');
+      slides[i].classList.add('none');
+    }
+
+  }
+} else if(window.innerWidth < desktopWidth){
+  for(let i = 6; i <= slides.length-6; ++i){
+    if(!slides[i].classList.contains('flex')){
+      slides[i].classList.add('flex');
+      slides[i].classList.remove('none');
+    } else {
+      slides[i].classList.remove('flex');
+      slides[i].classList.add('none');
+    }
+
+  }
+}
+}
+desktopResize();
+window.addEventListener('resize', desktopResize);
+
 swiperBtn.addEventListener('click', function(){
   let slides = document.querySelectorAll('.swiper__item'); 
   let sliderSection = document.querySelector('.slider-section');
@@ -45,6 +77,7 @@ swiperBtn.addEventListener('click', function(){
     swiperBtn.classList.remove('slider-section__btn--rotate');
     
   }
+
   for(let i = 6; i <= slides.length; ++i){
     if(!slides[i].classList.contains('flex')){
       slides[i].classList.add('flex');

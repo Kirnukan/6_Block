@@ -125,7 +125,8 @@
 
 @media (min-width: 768px){
     .slider-section{
-        max-width: 1120px;       
+        max-width: 1120px;  
+     
         min-width: 100%;
         max-height: 322px;
         height: 322px;
@@ -139,6 +140,7 @@
 
     .swiper__list{
         height: 200px;
+
     }
     .swiper__list{
         flex-wrap: wrap;
@@ -159,14 +161,11 @@
         width: 25%;
         margin-right: 24px;
         margin-bottom: 16px;
-        
     }
     .none{
-        transition: 2s display;
         display: none;
     }
     .flex{
-        transition: 2s display;
         display: flex;
     }
     .slider-section__btn{
@@ -186,5 +185,12 @@
     }
 }
 @media (min-width: 1120px){
+    .slider-section--active{
+        max-height: 400px;
+        height: 400px;
+    }
+    .swiper__item{
+        width: 20%;
+    }
 
 }
