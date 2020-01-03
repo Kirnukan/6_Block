@@ -177,7 +177,6 @@
     }
     .slider-section__btn--rotate::before{
         transform: rotate(180deg) translateX(17px);
-        filter: hue-rotate(180deg);
 
     }
     .swiper-pagination{
