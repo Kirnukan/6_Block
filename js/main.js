@@ -1,7 +1,6 @@
 const mobileWidth = 320;
 const miniDesktopWidth = 768;
 const desktopWidth = 1120;
-let slidesCount;
 //var swiperList = document.querySelector('.swiper-container').swiper;
 
 let swiperValues = {
