@@ -2,7 +2,19 @@ const mobileWidth = 320;
 const miniDesktopWidth = 768;
 const desktopWidth = 1120;
 //var swiperList = document.querySelector('.swiper-container').swiper;
+let slidesCountFunction = function(count){
+  let slides = document.querySelectorAll('.swiper__item'); 
+  for(let i = 6; i <= slides.length-count; ++i){
+    if(!slides[i].classList.contains('flex')){
+      slides[i].classList.add('flex');
+      slides[i].classList.remove('none');
+    } else {
+      slides[i].classList.remove('flex');
+      slides[i].classList.add('none');
+    }
 
+  }
+}
 let swiperValues = {
   
     slidesPerView: 'auto',
@@ -19,48 +31,21 @@ let swiperValues = {
 if(window.innerWidth < miniDesktopWidth){
  swiperList =  new Swiper('.swiper-container', swiperValues);
 }
-const swiperFunc = function(){
-  if (window.innerWidth >= miniDesktopWidth) {
-    swiperList.destroy();
-  } else {
-    swiperList = new Swiper('.swiper-container', swiperValues)
-  }
 
-}
-  window.addEventListener('resize', swiperFunc);
 
 let swiperBtn = document.querySelector('.slider-section__btn');
-let slides = document.querySelectorAll('.swiper__item'); 
+
 let desktopResize = function(){
 if (window.innerWidth >= desktopWidth) {
-  for(let i = 6; i <= slides.length-4; ++i){
-    if(!slides[i].classList.contains('flex')){
-      slides[i].classList.add('flex');
-      slides[i].classList.remove('none');
-    } else {
-      slides[i].classList.remove('flex');
-      slides[i].classList.add('none');
-    }
-
-  }
+  slidesCountFunction(4);
 } else if(window.innerWidth < desktopWidth){
-  for(let i = 6; i <= slides.length-6; ++i){
-    if(!slides[i].classList.contains('flex')){
-      slides[i].classList.add('flex');
-      slides[i].classList.remove('none');
-    } else {
-      slides[i].classList.remove('flex');
-      slides[i].classList.add('none');
-    }
-
-  }
+  slidesCountFunction(6);
 }
 }
 desktopResize();
 window.addEventListener('resize', desktopResize);
 
 swiperBtn.addEventListener('click', function(){
-  let slides = document.querySelectorAll('.swiper__item'); 
   let sliderSection = document.querySelector('.slider-section');
   if(!sliderSection.classList.contains('slider-section--active')){
     sliderSection.classList.add('slider-section--active');
@@ -77,15 +62,6 @@ swiperBtn.addEventListener('click', function(){
     swiperBtn.innerText = "Показать все";
   }
 
-  for(let i = 6; i <= slides.length; ++i){
-    if(!slides[i].classList.contains('flex')){
-      slides[i].classList.add('flex');
-      slides[i].classList.remove('none');
-    } else {
-      slides[i].classList.remove('flex');
-      slides[i].classList.add('none');
-    }
-
-  }
+  slidesCountFunction(0);
 
 });
