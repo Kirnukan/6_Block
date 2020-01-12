@@ -5,11 +5,9 @@ const desktopWidth = 1120;
 let slidesCountFunction = function(count){
   let slides = document.querySelectorAll('.swiper__item'); 
   for(let i = 6; i <= slides.length-count; ++i){
-    if(!slides[i].classList.contains('flex')){
-      slides[i].classList.add('flex');
+    if(slides[i].classList.contains('none')){
       slides[i].classList.remove('none');
     } else {
-      slides[i].classList.remove('flex');
       slides[i].classList.add('none');
     }
 
